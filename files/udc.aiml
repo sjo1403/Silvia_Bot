@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    <category>
+        <pattern>*</pattern>
+        <template>Sorry, I don't have an answer for that.</template>
+    </category>
+    
+    <category>
+        <pattern>HI</pattern>
+        <template>Hi, I'm Silvia, your Career Advisor Bot! I'll help guide you in choosing a computing career. 
+            First off, are you technically oriented or business oriented?
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>I AM *</pattern>
+        <template>
+            <think> 
+                <set name = "Q1"><star/></set>
+            </think>
+            
+            <condition name = "Q1" value = "technically oriented">
+                Great! Next, do you like learning new technology or maintaining computer systems?
+            </condition>
+            
+            <condition name = "Q1" value = "business oriented">
+                Great! Next, do you like leading others, streamlining processes, or explaining technology?
+            </condition>
+        </template>
+    </category>
+    
+
+    <category>
+        <pattern>TECHNICALLY ORIENTED</pattern>
+        <template>
+            <think> 
+                <set name = "Q1">technically oriented</set>
+            </think>
+            Great! Next, do you like learning new technology or maintaining computer systems?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>BUSINESS ORIENTED</pattern>
+        <template>
+            <think> 
+                <set name = "Q1">business oriented</set>
+            </think>
+            Great! Next, do you like leading others, streamlining processes, or explaining technology?
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>I like *</pattern>
+            <template>
+                <think> 
+                    <set name = "Q2"><star/></set>
+                </think>
+                <condition name = "Q2" value = "learning new technology">
+                    <think> 
+                            <set name = "career">software developer</set>
+                    </think>
+                    Awesome! Since you are <get name = "Q1" /> and like learning new technology,
+                    I recommend Software Developer. Would you like to know more about
+                    this career?
+                </condition>
+                
+                <condition name = "Q2" value = "maintaining computer systems">
+                    <think> 
+                        <set name = "career">systems administrator</set>
+                    </think>
+                    Awesome! Since you are <get name = "Q1" /> and like maintaining computer systems,
+                    I recommend Systems Administrator.Would you like to know more about
+                    this career?
+                </condition>
+                
+                <condition name = "Q2" value = "leading others">
+                    <think> 
+                        <set name = "career">project manager</set>
+                    </think>
+                    Awesome! Since you are <get name = "Q1" /> and like leading others,
+                    I recommend Project Manager. Would you like to know more about
+                    this career?
+                </condition>
+                            
+                <condition name = "Q2" value = "streamlining processes">
+                    <think> 
+                        <set name = "career">scrum master</set>
+                    </think>
+                    Awesome! Since you are <get name = "Q1" /> and like streamlining processes,
+                    I recommend SCRUM Master. Would you like to know more about
+                    this career?
+                </condition>
+                            
+                <condition name = "Q2" value = "explaining technology">
+                    <think> 
+                        <set name = "career">sales engineer</set>
+                    </think>
+                    Awesome! Since you are <get name = "Q1" /> and like explaining technology,
+                    I recommend Sales Engineer. Would you like to know more about
+                    this career?
+                </condition>
+            </template>
+    </category>
+    
+    <category>
+        <pattern>LEARNING NEW TECHNOLOGY</pattern>
+            <template>
+                <think> 
+                    <set name = "career">software developer</set>
+                </think>
+                Awesome! Since you are <get name = "Q1" /> and like learning new technology,
+                I recommend Software Developer. Would you like to know more about
+                    this career?
+            </template>
+    </category>
+    
+        <category>
+        <pattern>MAINTAINING COMPUTER SYSTEMS</pattern>
+            <template>
+                <think> 
+                    <set name = "career">systems administrator</set>
+                </think>
+                Awesome! Since you are <get name = "Q1" /> and like maintaining computer systems,
+                I recommend Systems Administrator. Would you like to know more about
+                    this career?
+            </template>
+    </category>
+    
+        <category>
+        <pattern>LEADING OTHERS</pattern>
+            <template>
+                <think> 
+                    <set name = "career">project manager</set>
+                </think>
+                Awesome! Since you are <get name = "Q1" /> and like leading others,
+                I recommend Project Manager. Would you like to know more about
+                    this career?
+            </template>
+    </category>
+    
+        <category>
+        <pattern>STREAMLINING PROCESSES</pattern>
+            <template>
+                <think> 
+                    <set name = "career">scrum master</set>
+                </think>
+                Awesome! Since you are <get name = "Q1" /> and like streamlining processes,
+                I recommend SCRUM Master. Would you like to know more about
+                    this career?
+            </template>
+    </category>
+    
+        <category>
+        <pattern>EXPLAINING TECHNOLOGY</pattern>
+            <template>
+                <think> 
+                    <set name = "career">sales engineer</set>
+                </think>
+                Awesome! Since you are <get name = "Q1" /> and like explaining technology,
+                I recommend Sales Engineer. Would you like to know more about
+                    this career?
+            </template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <template>
+            <condition name = "career" value = "software developer">
+                Software Developers design and develop software applications used in
+                computers, mobile devices, and embedded systems.
+                I hope our chat helped 😊 Bye!
+            </condition>
+            
+            <condition name = "career" value = "systems administrator">
+                Systems Administrators configure and maintain the hardware, software, 
+                and operating systems used in a business.
+                I hope our chat helped 😊 Bye!
+            </condition>
+            
+            <condition name = "career" value = "project manager">
+                Project Managers plan, schedule, and oversee the execution and delivery 
+                of software projects.
+                I hope our chat helped 😊 Bye!
+            </condition>
+            
+            <condition name = "career" value = "scrum master">
+                SCRUM Masters facilitate the Agile development process so that the
+                software development team can deliver projects efficiently.
+                I hope our chat helped 😊 Bye!
+            </condition>
+            
+            <condition name = "career" value = "sales engineer">
+                Sales Engineers sell technological products and services to businesses.
+                I hope our chat helped 😊 Bye!
+            </condition>
+        </template>
+    </category>
+    
+    
+        <category>
+        <pattern>No</pattern>
+        <template>
+            I hope our chat helped 😊 Bye!
+        </template>
+    </category>
+  
+</aiml>
